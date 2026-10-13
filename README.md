@@ -2,8 +2,8 @@ Machine-learning comparison on lab-scale Hybrid Rocket Fuels firing data for Par
 Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.  
 MC Dropout, commomnly called as Monte-Carlo Dropout over a small neural net, is used only to estimate uncertainty on regression rate.
 
-1) Institution: Global Academy of Technology (GAT), Department of Aeronautical Engineering  
-2) Project focus: Compared experimental tests of biofuel-integrated hybrid fuels, with emphasis on regression rate and blend performance.
+1) **Institution**: Global Academy of Technology (GAT), Department of Aeronautical Engineering  
+2) **Project focus**: Compared experimental tests of biofuel-integrated hybrid fuels, with emphasis on regression rate and blend performance.
 
 ## Dataset
 
@@ -54,3 +54,6 @@ All models use the **same** train/test split, features, and metrics for a fair c
 ├── compare_models.py
 └── results/
     └── model_comparison.csv
+```
+
+On the held-out test set, XGBoost achieved the best R² for Isp (0.96) and Thrust (0.99); LightGBM was best for regression rate (0.86). Pressure and characteristic velocity were not predictable in this dataset (near-zero variance).
