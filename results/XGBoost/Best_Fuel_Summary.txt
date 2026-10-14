@@ -1,0 +1,40 @@
+HYBRID ROCKET FUEL BLEND — ML SUMMARY
+============================================================
+Excel file     : daq_raw_4blends.xlsx
+Sheets used    : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
+Input features : ['X_Value', 'Force', 'Pressure_0', 'Gox']
+Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar']
+Total input rows : 376
+Labeled rows     : 376
+Train / Test (labeled) : 300 / 76
+
+PER-TARGET TEST METRICS (labeled test)
+------------------------------------------------------------
+Pressure              Test R2=0.0023  MAE=0.0263  RMSE=0.0376
+rdot_mm_s             Test R2=0.9331  MAE=0.0080  RMSE=0.0263
+Isp                   Test R2=0.9863  MAE=0.1007  RMSE=0.2159
+Thrust                Test R2=0.9932  MAE=0.1137  RMSE=0.2698
+cstar                 Test R2=-0.0008  MAE=0.0001  RMSE=0.0001
+
+MC Dropout TEST R2=0.8743  MAE=0.0272  mean sigma=0.1212
+
+FUEL RANKING (LABELED TEST SET)
+------------------------------------------------------------
+ rank fuel_type  pred_Pressure  pred_rdot_mm_s  pred_Isp  pred_Thrust  pred_cstar  uncertainty_rdot  final_score
+    1 Firing 03       0.066539        0.931212  1.313450     2.392780    0.000166          0.118939     0.619712
+    2 Firing 01       0.066523        0.923894  1.606654     2.894609    0.000166          0.122816     0.223692
+    3 Firing 02       0.066521        0.920898 -2.166164    -3.893497    0.000166          0.116976     0.126995
+    4 Firing 04       0.066488        0.922415  2.049945     3.761708    0.000166          0.125931    -0.070594
+
+BEST FUEL
+------------------------------------------------------------
+Best Fuel               : Firing 03
+Regression Rate         : 0.9312 ± 0.1189 mm/s
+Pressure (pred)         : 0.0665
+Specific Impulse        : 1.31
+Thrust                  : 2.39
+Characteristic Velocity : 0.00
+Final Score             : 0.6197
+
+Excel : Best_Fuel_Results.xlsx
+Graph : Gox_vs_Predicted_Regression_Rate.png
