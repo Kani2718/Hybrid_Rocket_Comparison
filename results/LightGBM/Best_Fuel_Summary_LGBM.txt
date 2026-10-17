@@ -4,7 +4,7 @@ Main model     : LightGBM
 Excel file     : daq_raw_4blends.xlsx
 Sheets used    : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
 Input features : ['X_Value', 'Force', 'Pressure_0', 'Gox']
-Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar']
+Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar', 'Specific Density']
 Total input rows : 376
 Labeled rows     : 376
 Train / Test (labeled) : 300 / 76
@@ -16,26 +16,28 @@ rdot_mm_s             Test R2=0.9412  MAE=0.0081  RMSE=0.0246
 Isp                   Test R2=0.9855  MAE=0.1107  RMSE=0.2226
 Thrust                Test R2=0.9912  MAE=0.1534  RMSE=0.3073
 cstar                 Test R2=-0.0008  MAE=0.0001  RMSE=0.0001
+Specific Density      Test R2=0.9884  MAE=86.3851  RMSE=177.2732
 
-MC Dropout TEST R2=0.8825  MAE=0.0267  mean sigma=0.1454
+MC Dropout TEST R2=0.9147  MAE=0.0216  mean sigma=0.1178
 
 FUEL RANKING (LABELED TEST SET)
 ------------------------------------------------------------
- rank fuel_type  pred_Pressure  pred_rdot_mm_s  pred_Isp  pred_Thrust  pred_cstar  uncertainty_rdot  final_score
-    1 Firing 03       0.066521        0.931689  1.314041     2.363033    0.000166          0.143666     0.430248
-    2 Firing 01       0.066521        0.924205  1.615813     2.888428    0.000166          0.141344     0.411124
-    3 Firing 04       0.066521        0.923438  2.073437     3.738879    0.000166          0.153212    -0.059825
-    4 Firing 02       0.066521        0.921364 -2.163674    -3.883825    0.000166          0.143449    -0.088679
+ rank fuel_type  pred_Pressure  pred_rdot_mm_s  pred_Isp  pred_Thrust  pred_cstar  pred_Specific Density  uncertainty_rdot  final_score
+    1 Firing 03       0.066521        0.931689  1.314041     2.363033    0.000166            1157.348752          0.117089     0.441883
+    2 Firing 01       0.066521        0.924205  1.615813     2.888428    0.000166            1455.517469          0.116377     0.404546
+    3 Firing 04       0.066521        0.923438  2.073437     3.738879    0.000166            1847.703566          0.122633     0.033479
+    4 Firing 02       0.066521        0.921364 -2.163674    -3.883825    0.000166           -1924.612384          0.115052     0.000000
 
 BEST FUEL
 ------------------------------------------------------------
 Best Fuel               : Firing 03
-Regression Rate         : 0.9317 ± 0.1437 mm/s
+Regression Rate         : 0.9317 ± 0.1171 mm/s
 Pressure (pred)         : 0.0665
 Specific Impulse        : 1.31
 Thrust                  : 2.36
 Characteristic Velocity : 0.00
-Final Score             : 0.4302
+Specific Density        : 1157.35
+Final Score             : 0.4419
 
 Excel : Best_Fuel_Results_LGBM.xlsx
 Graph : Pressure_vs_Predicted_Regression_Rate_LGBM.png
