@@ -22,6 +22,8 @@ Processed firing data (from LabVIEW `.lvm` exports) are stored as Excel:
 | `Isp` | Target | Specific impulse |
 | `Thrust` | Target | Thrust (from force as applicable) |
 | `cstar` | Target | Characteristic velocity |
+| `specific density` | Target | Specific Density |
+
 
 ---
 
