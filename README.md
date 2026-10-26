@@ -61,10 +61,10 @@ All models use the **same** train/test split, features, and metrics for a fair c
         |── Best_Fuel_Results_LGBM.txt
         |── Gox_vs_Predicted_Regression_Rate_LGBM.jpg
         └── Pressure_vs_Predicted_Regression_Rate_LGBM.jpg
-    └── Model Comparison
+    |── Model Comparison
         |── model_comparison.csv
         └── model_comparison.txt
-    └── Random Forest
+    |── Random Forest
         |── Best_Fuel_Results_RF.xlsx
         |── Best_Fuel_Results_RF.txt
         |── Gox_vs_Predicted_Regression_Rate_RF.jpg
