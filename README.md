@@ -21,6 +21,7 @@ Processed firing data (from LabVIEW `.lvm` exports) are stored as Excel:
 | `rdot_mm_s` | Target | Average regression rate (mm/s) |
 | `Isp` | Target | Specific impulse |
 | `Thrust` | Target | Thrust (from force as applicable) |
+| `Cf` | Target | Thrust Co-efficient (from force as applicable) |
 | `cstar` | Target | Characteristic velocity |
 | `specific density` | Target | Specific Density |
 
@@ -55,7 +56,22 @@ All models use the **same** train/test split, features, and metrics for a fair c
 │   └── lightgbm_model.py
 ├── compare_models.py
 └── results/
-    └── model_comparison.csv
+    └── LightGBM
+        |── Best_Fuel_Results_LGBM.xlsx
+        |── Best_Fuel_Results_LGBM.txt
+        |── Gox_vs_Predicted_Regression_Rate_LGBM.jpg
+        └── Pressure_vs_Predicted_Regression_Rate_LGBM.jpg
+    └── Model Comparison
+        |── model_comparison.csv
+        └── model_comparison.txt
+    └── Random Forest
+        |── Best_Fuel_Results_RF.xlsx
+        |── Best_Fuel_Results_RF.txt
+        |── Gox_vs_Predicted_Regression_Rate_RF.jpg
+        └── Pressure_vs_Predicted_Regression_Rate_RF.jpg
+    └── XGBoost
+        |── Best_Fuel_Results.xlsx
+        |── Best_Fuel_Results.txt
+        |── Gox_vs_Predicted_Regression_Rate.jpg
+        └── Pressure_vs_Predicted_Regression_Rate.jpg
 ```
-
-On the held-out test set, XGBoost achieved the best R² for Isp (0.96) and Thrust (0.99); LightGBM was best for regression rate (0.86). Pressure and characteristic velocity were not predictable in this dataset (near-zero variance).
