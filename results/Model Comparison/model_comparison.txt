@@ -1,0 +1,62 @@
+HYBRID ROCKET FUEL — MODEL COMPARISON
+============================================================
+Excel        : daq_raw_4blends.xlsx
+Sheets       : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
+Features     : ['X_Value', 'Force', 'Pressure_0', 'Gox']
+Targets      : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'Cf', 'cstar', 'Specific Density', 'O/F Ratio']
+Train / Test : 419 / 105
+Seed         : 100
+n_estimators : 300
+
+TEST R2
+----------------------------------------
+model             LightGBM  RandomForest  XGBoost
+target                                           
+Cf                 -0.0003       -0.0501  -0.0003
+Isp                 0.9826        0.9277   0.9841
+O/F Ratio           0.9382        0.9266   0.9605
+Pressure           -0.0179        0.1243  -0.0124
+Specific Density    0.9828        0.9290   0.9851
+Thrust              0.9912        0.9693   0.9935
+cstar               0.6668        0.7505   0.6862
+rdot_mm_s           0.9985        0.9934   0.9983
+
+TEST MAE
+----------------------------------------
+model              LightGBM  RandomForest    XGBoost
+target                                              
+Cf                   0.0001        0.0001     0.0001
+Isp                  3.3597        6.6913     2.9566
+O/F Ratio            0.2345        0.2774     0.1991
+Pressure             0.0226        0.0200     0.0223
+Specific Density  2912.8774     5922.7177  2648.2143
+Thrust               0.1336        0.3657     0.1201
+cstar              108.1062       93.3838   107.2405
+rdot_mm_s            0.0145        0.0374     0.0137
+
+TEST RMSE
+----------------------------------------
+model              LightGBM  RandomForest    XGBoost
+target                                              
+Cf                   0.0003        0.0003     0.0003
+Isp                  6.4904       13.2397     6.2042
+O/F Ratio            0.4014        0.4372     0.3206
+Pressure             0.0352        0.0327     0.0351
+Specific Density  5751.3350    11681.8892  5356.8835
+Thrust               0.3223        0.6023     0.2770
+cstar              166.0356      143.6860   161.1149
+rdot_mm_s            0.0251        0.0527     0.0265
+
+BEST MODEL PER TARGET
+----------------------------------------
+          target   best_model   best_r2    best_mae   best_rmse
+        Pressure RandomForest  0.124260    0.020011    0.032658
+       rdot_mm_s     LightGBM  0.998500    0.014512    0.025051
+             Isp      XGBoost  0.984118    2.956604    6.204250
+          Thrust      XGBoost  0.993506    0.120096    0.277047
+              Cf     LightGBM -0.000324    0.000066    0.000275
+           cstar RandomForest  0.750452   93.383804  143.686044
+Specific Density      XGBoost  0.985080 2648.214281 5356.883476
+       O/F Ratio      XGBoost  0.960544    0.199055    0.320643
+
+CSV saved: /content/results/model_comparison.csv

@@ -3,42 +3,44 @@ HYBRID ROCKET FUEL BLEND — ML SUMMARY
 Excel file     : daq_raw_4blends.xlsx
 Sheets used    : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
 Input features : ['X_Value', 'Force', 'Pressure_0', 'Gox']
-Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar', 'Specific Density', 'O/F Ratio']
-Total input rows : 376
-Labeled rows     : 376
-Train / Test (labeled) : 300 / 76
+Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'Cf', 'cstar', 'Specific Density', 'O/F Ratio']
+Total input rows : 524
+Labeled rows     : 524
+Train / Test (labeled) : 419 / 105
 
 PER-TARGET TEST METRICS (labeled test)
 ------------------------------------------------------------
-Pressure              Test R2=0.0023  MAE=0.0263  RMSE=0.0376
-rdot_mm_s             Test R2=0.9331  MAE=0.0080  RMSE=0.0263
-Isp                   Test R2=0.9791  MAE=1.6837  RMSE=3.6068
-Thrust                Test R2=0.9932  MAE=0.1137  RMSE=0.2698
-cstar                 Test R2=0.6203  MAE=42.9754  RMSE=75.6627
-Specific Density      Test R2=0.9796  MAE=1466.9674  RMSE=3169.2838
-O/F Ratio             Test R2=0.9993  MAE=0.1687  RMSE=0.2128
+Pressure              Test R2=-0.0124  MAE=0.0223  RMSE=0.0351
+rdot_mm_s             Test R2=0.9983  MAE=0.0137  RMSE=0.0265
+Isp                   Test R2=0.9841  MAE=2.9566  RMSE=6.2042
+Thrust                Test R2=0.9935  MAE=0.1201  RMSE=0.2770
+Cf                    Test R2=-0.0003  MAE=0.0001  RMSE=0.0003
+cstar                 Test R2=0.6862  MAE=107.2405  RMSE=161.1149
+Specific Density      Test R2=0.9851  MAE=2648.2143  RMSE=5356.8835
+O/F Ratio             Test R2=0.9605  MAE=0.1991  RMSE=0.3206
 
-MC Dropout TEST R2=0.8214  MAE=0.0342  mean sigma=0.1542
+MC Dropout TEST R2=0.9688  MAE=0.0925  mean sigma=0.3355
 
 FUEL RANKING (LABELED TEST SET)
 ------------------------------------------------------------
- rank fuel_type  pred_Pressure  pred_rdot_mm_s   pred_Isp  pred_Thrust  pred_cstar  pred_Specific Density  pred_O/F Ratio  uncertainty_rdot  final_score
-    1 Firing 03       0.066539        0.931212  16.709509     2.392780  103.906609           14865.126953       78.962585          0.150449     0.783524
-    2 Firing 01       0.066523        0.923894  22.394730     2.894609  100.675667           20134.845703       76.017471          0.151279     0.471451
-    3 Firing 04       0.066488        0.922415  26.636831     3.761708  211.230942           23632.908203       77.487480          0.157657     0.163738
-    4 Firing 02       0.066521        0.920898 -27.483624    -3.893497  108.697868          -24460.822266       76.987000          0.157379    -0.332607
+ rank fuel_type  pred_Pressure  pred_rdot_mm_s   pred_Isp  pred_Thrust  pred_Cf  pred_cstar  pred_Specific Density  pred_O/F Ratio  uncertainty_rdot  final_score
+    1 Firing 01       0.069632        1.429252  35.189381     2.808738 0.000001  364.865570           31682.955078       39.879734          0.313250     0.602961
+    2 Firing 03       0.067341        1.456340  25.514936     2.258499 0.000001  335.742157           22891.205078       40.421268          0.327715     0.378251
+    3 Firing 04       0.067934        1.592244  33.944271     3.297321 0.000001  295.325378           30423.511719       40.704105          0.371475     0.153551
+    4 Firing 02       0.068755        1.397708 -52.043343    -4.294372 0.000001  391.125000          -46313.757812       40.395622          0.330236     0.134510
 
 BEST FUEL
 ------------------------------------------------------------
-Best Fuel               : Firing 03
-Regression Rate         : 0.9312 ± 0.1504 mm/s
-Pressure (pred)         : 0.0665
-Specific Impulse        : 16.71
-Thrust                  : 2.39
-Characteristic Velocity : 103.91
-Specific Density        : 14865.13
-O/F Ratio               : 78.96
-Final Score             : 0.7835
+Best Fuel               : Firing 01
+Regression Rate         : 1.4293 ± 0.3133 mm/s
+Pressure (pred)         : 0.0696
+Specific Impulse        : 35.19
+Thrust                  : 2.81
+Thrust Co-efficient     : 0.00
+Characteristic Velocity : 364.87
+Specific Density        : 31682.96
+O/F Ratio               : 39.88
+Final Score             : 0.6030
 
 Excel : Best_Fuel_Results.xlsx
 Graph : Gox_vs_Predicted_Regression_Rate.png

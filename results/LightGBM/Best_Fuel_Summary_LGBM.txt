@@ -4,42 +4,44 @@ Main model     : LightGBM
 Excel file     : daq_raw_4blends.xlsx
 Sheets used    : ['Firing 01', 'Firing 02', 'Firing 03', 'Firing 04']
 Input features : ['X_Value', 'Force', 'Pressure_0', 'Gox']
-Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'cstar', 'Specific Density', 'O/F Ratio']
-Total input rows : 376
-Labeled rows     : 376
-Train / Test (labeled) : 300 / 76
+Predicted targets : ['Pressure', 'rdot_mm_s', 'Isp', 'Thrust', 'Cf', 'cstar', 'Specific Density', 'O/F Ratio']
+Total input rows : 524
+Labeled rows     : 524
+Train / Test (labeled) : 419 / 105
 
 PER-TARGET TEST METRICS (labeled test)
 ------------------------------------------------------------
-Pressure              Test R2=-0.0007  MAE=0.0263  RMSE=0.0376
-rdot_mm_s             Test R2=0.9412  MAE=0.0081  RMSE=0.0246
-Isp                   Test R2=0.9746  MAE=1.9870  RMSE=3.9746
-Thrust                Test R2=0.9912  MAE=0.1534  RMSE=0.3073
-cstar                 Test R2=0.5630  MAE=45.6474  RMSE=81.1746
-Specific Density      Test R2=0.9752  MAE=1764.8639  RMSE=3498.9871
-O/F Ratio             Test R2=0.9962  MAE=0.3080  RMSE=0.4956
+Pressure              Test R2=-0.0179  MAE=0.0226  RMSE=0.0352
+rdot_mm_s             Test R2=0.9985  MAE=0.0145  RMSE=0.0251
+Isp                   Test R2=0.9826  MAE=3.3597  RMSE=6.4904
+Thrust                Test R2=0.9912  MAE=0.1336  RMSE=0.3223
+Cf                    Test R2=-0.0003  MAE=0.0001  RMSE=0.0003
+cstar                 Test R2=0.6668  MAE=108.1062  RMSE=166.0356
+Specific Density      Test R2=0.9828  MAE=2912.8774  RMSE=5751.3350
+O/F Ratio             Test R2=0.9382  MAE=0.2345  RMSE=0.4014
 
-MC Dropout TEST R2=0.7382  MAE=0.0414  mean sigma=0.1841
+MC Dropout TEST R2=0.9829  MAE=0.0671  mean sigma=0.3332
 
 FUEL RANKING (LABELED TEST SET)
 ------------------------------------------------------------
- rank fuel_type  pred_Pressure  pred_rdot_mm_s   pred_Isp  pred_Thrust  pred_cstar  pred_Specific Density  pred_O/F Ratio  uncertainty_rdot  final_score
-    1 Firing 03       0.066521        0.931689  16.654369     2.363033  105.432259           14826.989918       79.036115          0.177852     0.641516
-    2 Firing 04       0.066521        0.923438  26.565124     3.738879  215.811192           23728.630805       77.741570          0.185136     0.333788
-    3 Firing 01       0.066521        0.924205  22.849726     2.888428  101.236167           20464.217182       76.025777          0.188324    -0.067415
-    4 Firing 02       0.066521        0.921364 -27.872271    -3.883825  105.134289          -24792.792662       77.144888          0.185118    -0.288951
+ rank fuel_type  pred_Pressure  pred_rdot_mm_s   pred_Isp  pred_Thrust  pred_Cf  pred_cstar  pred_Specific Density  pred_O/F Ratio  uncertainty_rdot  final_score
+    1 Firing 01       0.069285        1.428186  35.280490     2.821594 0.000001  368.072169           31750.981229       39.938748          0.318231     0.562570
+    2 Firing 03       0.067935        1.456775  25.151331     2.277132 0.000001  337.040690           22480.423308       40.425978          0.336518     0.279258
+    3 Firing 02       0.068638        1.398730 -52.149405    -4.237092 0.000001  392.260057          -46452.551603       40.419544          0.314382     0.275878
+    4 Firing 04       0.067905        1.595253  34.222373     3.365584 0.000001  302.296689           30603.144936       40.650233          0.364229     0.121652
 
 BEST FUEL
 ------------------------------------------------------------
-Best Fuel               : Firing 03
-Regression Rate         : 0.9317 ± 0.1779 mm/s
-Pressure (pred)         : 0.0665
-Specific Impulse        : 16.65
-Thrust                  : 2.36
-Characteristic Velocity : 105.43
-Specific Density        : 14826.99
-O/F Ratio               : 79.04
-Final Score             : 0.6415
+Best Fuel               : Firing 01
+Regression Rate         : 1.4282 ± 0.3182 mm/s
+Pressure (pred)         : 0.0693
+Specific Impulse        : 35.28
+Thrust                  : 2.82
+Thrust Co-efficient     : 0.00
+Characteristic Velocity : 368.07
+Specific Density        : 31750.98
+O/F Ratio               : 39.94
+Final Score             : 0.5626
 
 Excel : Best_Fuel_Results_LGBM.xlsx
 Graph : Pressure_vs_Predicted_Regression_Rate_LGBM.png
