@@ -1,6 +1,7 @@
 The Machine-learning used here in comparing the models and also for Hybrid Rocket Fuels firing data is of Supervised Learning. 
 As it contains two types (Regression, Classification), The commonly used type for continuous Data values is Regression, in which we use it here.
 The Classification is not used because it is only used when the data set is categorized into different data values or datasets.
+The Python headers libraries are being listed in requirements files.
 
 Now, We do the comparison on lab-scale Hybrid Rocket Fuels firing data for Paraffin and Beeswax-Based blends.  
 Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.  
@@ -53,7 +54,10 @@ All models use the **same** train/test split, features, and metrics for a fair c
 ├── README.md
 ├── requirements.txt
 ├── data/
-│   └── daq_raw_4blends.xlsx
+│   └── LVM_data\
+        ├── LVM_to_XLSX.ipynb
+        |── Pressure_vs_time.ipynb
+        └── daq_raw_4blends.xlsx
 ├── models/
 │   ├── xgboost_model.py
 │   ├── random_forest_model.py
