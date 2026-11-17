@@ -4,14 +4,14 @@ The Classification is not used because it is only used when the data set is cate
 The Python headers libraries are being listed in requirements files.
 
 Now, We do the comparison on lab-scale Hybrid Rocket Fuels firing data for Paraffin and Beeswax-Based blends.  
-Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.  
+Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.
 MC Dropout, commomnly called as Monte-Carlo Dropout over a small neural net, is used only to estimate uncertainty on regression rate.
 
 1) **Institution**: Global Academy of Technology (GAT), Department of Aeronautical Engineering  
 2) **Project focus**: Compared experimental tests of biofuel-integrated hybrid fuels, with emphasis on regression rate and blend performance.
 
 ## Dataset
-The previous dataset is found to be in LabVIEW `.lvm` exports
+The previous dataset is found to be in LabVIEW `.lvm` exports.
 Processed firing data are then stored as Excel:
 
 1) **File:** `data/daq_raw_4blends.xlsx`
