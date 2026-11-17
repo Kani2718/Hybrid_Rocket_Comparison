@@ -63,10 +63,10 @@ All models use the **same** train/test split, features, and metrics for a fair c
     |── Pressure_vs_time.ipynb
     └── daq_raw_4blends.xlsx
 ├── models/
-│   ├── xgboost_model.py
-│   ├── random_forest_model.py
-│   └── lightgbm_model.py
-├── compare_models.py
+│   ├── xgboost_model.ipynb
+│   ├── random_forest_model.ipynb
+│   └── lightgbm_model.ipynb
+├── compare_models.ipynb
 └── results/
     └── LightGBM
         |── Best_Fuel_Results_LGBM.xlsx
