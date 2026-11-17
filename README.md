@@ -53,6 +53,7 @@ All models use the **same** train/test split, features, and metrics for a fair c
 .
 ├── README.md
 ├── requirements.txt
+├── compare_models.ipynb
 ├── data/
     ├── LVM_data
         |── GAT_S1_04.11.2025.lvm
@@ -63,10 +64,9 @@ All models use the **same** train/test split, features, and metrics for a fair c
     |── Pressure_vs_time.ipynb
     └── daq_raw_4blends.xlsx
 ├── models/
-│   ├── xgboost_model.ipynb
-│   ├── random_forest_model.ipynb
-│   └── lightgbm_model.ipynb
-├── compare_models.ipynb
+    ├── xgboost_model.ipynb
+    ├── random_forest_model.ipynb
+    └── lightgbm_model.ipynb
 └── results/
     └── LightGBM
         |── Best_Fuel_Results_LGBM.xlsx
