@@ -1,4 +1,8 @@
-Machine-learning comparison on lab-scale Hybrid Rocket Fuels firing data for Paraffin and Beeswax-Based blends.  
+The Machine-learning used here in comparing the models and also for Hybrid Rocket Fuels firing data is of Supervised Learning. 
+As it contains two types (Regression, Classification), The commonly used type for continuous Data values is Regression, in which we use it here.
+The Classification is not used because it is only used when the data set is categorized into different data values or datasets.
+
+Now, We do the comparison on lab-scale Hybrid Rocket Fuels firing data for Paraffin and Beeswax-Based blends.  
 Tree-based regressors (XGBoost, Random Forest, LightGBM) predict performance targets from DAQ and derived ballistic inputs.  
 MC Dropout, commomnly called as Monte-Carlo Dropout over a small neural net, is used only to estimate uncertainty on regression rate.
 
@@ -6,8 +10,8 @@ MC Dropout, commomnly called as Monte-Carlo Dropout over a small neural net, is 
 2) **Project focus**: Compared experimental tests of biofuel-integrated hybrid fuels, with emphasis on regression rate and blend performance.
 
 ## Dataset
-
-Processed firing data (from LabVIEW `.lvm` exports) are stored as Excel:
+The previous dataset is found to be in LabVIEW `.lvm` exports
+Processed firing data are then stored as Excel:
 
 1) **File:** `data/daq_raw_4blends.xlsx`
 2) **Sheets:** one sheet per fuel blend (4 blends)
