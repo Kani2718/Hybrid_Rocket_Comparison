@@ -55,6 +55,10 @@ All models use the **same** train/test split, features, and metrics for a fair c
 ├── requirements.txt
 ├── data/
     ├── LVM_data
+        |── GAT_S1_04.11.2025.lvm
+        |── GAT_S2_04.11.2025.lvm
+        |── GAT_S3_12.11.2025.lvm
+        └── GAT_S4_12.11.2025.lvm
     ├── LVM_to_XLSX.ipynb
     |── Pressure_vs_time.ipynb
     └── daq_raw_4blends.xlsx
