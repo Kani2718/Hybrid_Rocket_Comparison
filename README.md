@@ -87,3 +87,7 @@ All models use the **same** train/test split, features, and metrics for a fair c
         |── Gox_vs_Predicted_Regression_Rate.jpg
         └── Pressure_vs_Predicted_Regression_Rate.jpg
 ```
+
+## Related repository
+For per-firing models with leave-one-out (LOO) validation, see:
+https://github.com/Kani2718/hybrid-fuel-loo-models
