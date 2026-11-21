@@ -1,3 +1,4 @@
+# Hybrid Rocket Fuel Dataset with Machine Learning Models Comparison
 The Machine-learning used here in comparing the models and also for Hybrid Rocket Fuels firing data is of Supervised Learning. 
 As it contains two types (Regression, Classification), The commonly used type for continuous Data values is Regression, in which we use it here.
 The Classification is not used because it is only used when the data set is categorized into different data values or datasets.
